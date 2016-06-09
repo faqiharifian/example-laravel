@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => null, 'name' => null],
+    'from' => ['address' => env('MAIL_ADDRESS', 'contact@amarthafurniture.com'), 'name' => env('MAIL_NAME', 'Amartha Furniture')],
 
     /*
     |--------------------------------------------------------------------------

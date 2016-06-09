@@ -20,6 +20,10 @@ class PasswordController extends Controller
 
     use ResetsPasswords;
 
+    public $redirectPath = '/admin/dashboard';
+
+    public $subject = 'Your Password Reset Link';
+
     /**
      * Create a new password controller instance.
      *

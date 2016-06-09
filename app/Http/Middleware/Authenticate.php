@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests;
 
 class Authenticate
 {
@@ -21,7 +22,8 @@ class Authenticate
             if ($request->ajax() || $request->wantsJson()) {
                 return response('Unauthorized.', 401);
             } else {
-                return redirect()->guest('login');
+                \Session::put('next', $request->url());
+                return redirect()->guest('/login');
             }
         }
 
